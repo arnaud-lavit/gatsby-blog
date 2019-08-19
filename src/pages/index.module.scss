@@ -7,9 +7,15 @@
   padding: 1.5rem 4rem;
 }
 
+@media (max-width: 740px) {
+  .posts {
+    padding: 0.4rem;
+  }
+}
+
 .post {
   border-radius: 0 0 4px 4px;
-  margin: 2rem 1rem 6rem;
+  margin: 2rem 0 6rem;
 
   a {
     display: block;
