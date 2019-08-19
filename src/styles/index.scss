@@ -1,7 +1,8 @@
 /* Reset provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
+@import url('https://fonts.googleapis.com/css?family=Karla|Thasadith&display=swap');
 
 html {
-  font-family: sans-serif;
+  font-family: 'Thasadith',sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -201,8 +202,9 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: sans-serif;
+  color: hsla(0, 0%, 0%, 0.6);
+  font-family: 'Thasadith',sans-serif;
+  font-size: 20px;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;

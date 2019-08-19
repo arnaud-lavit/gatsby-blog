@@ -14,7 +14,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Full-Stack Bootcamp',
+    title: 'Travel Blog',
     author: 'Arnaud Lavit'
   },
   plugins: [
