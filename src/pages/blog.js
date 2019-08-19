@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
+import Img from 'gatsby-image'
 import Head from '../components/head'
 import Layout from '../components/layout'
 import blogStyles from './blog.module.scss'
@@ -12,7 +13,12 @@ const BlogPage = () => {
           node {
             title
             slug
-            publishedDate(fromNow:true)
+            publishedDate(formatString: "MMMM Do, YYYY")
+            picture {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
           }
         }
       }
@@ -25,10 +31,11 @@ const BlogPage = () => {
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map(edge => {
           return (
-            <li className={blogStyles.post}>
+            <li key={edge.node.slug} className={blogStyles.post}>
               <Link to={`/blog/${edge.node.slug}`}>
                 <h2>{edge.node.title}</h2>
                 <p>{edge.node.publishedDate}</p>
+                <Img fluid={edge.node.picture.fluid}/>
               </Link>
             </li>
           )
