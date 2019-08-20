@@ -1,21 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Karla|Thasadith&display=swap');
 
 .posts {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   list-style-type: none;
   margin: 0;
   padding: 1.5rem 4rem;
 }
 
-@media (max-width: 740px) {
-  .posts {
-    padding: 0.4rem;
-  }
-}
-
 .post {
-  border-radius: 0 0 4px 4px;
   margin: 2rem 0 6rem;
+  
 
   a {
     display: block;
@@ -45,5 +41,22 @@
     margin-top: 1rem;
     margin-bottom: 1.2rem;
   }
+  
+  Img {
+    border-radius: 8px;
+    transition: all ease-out 0.2s !important;
+  }
 
+}
+
+@media (max-width: 740px) {
+  .posts {
+    padding: 0.4rem;
+  }
+
+  .post {
+    .subtitle {
+      font-size: 1.1rem;
+    }
+  }
 }
