@@ -10,6 +10,7 @@ const DestinationsPage = () => {
       allContentfulBlogPost {
         edges {
           node {
+            title
             location {
               lon
               lat
@@ -21,9 +22,11 @@ const DestinationsPage = () => {
   `)
   
   const coords = data.allContentfulBlogPost.edges.map(edge => {
-    return edge.node.location
+    return {
+      coordinates: edge.node.location,
+      city: edge.node.title
+    }
   })
-  
   return (
     <Layout>
       <Head title="Destinations" />

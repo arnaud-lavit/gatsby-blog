@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { push } from "gatsby"
-import PropTypes from "prop-types"
 import {
   ComposableMap,
   ZoomableGroup,
@@ -8,6 +7,8 @@ import {
   Geography,
   Markers,
   Marker,
+  Annotations,
+  Annotation
 } from "react-simple-maps"
 
 import worldJson from "../../static/world-50m-simplified.json"
@@ -31,12 +32,12 @@ class ZoomPan extends Component {
 
   render() {
     const { cities, center, zoom } = this.props
-   
+
     return (
       <div>
         <ComposableMap
           projectionConfig={{
-            scale: 320,
+            scale: 500,
           }}
           width={1200}
           height={zoom > 1 ? 500 : 900}
@@ -79,7 +80,7 @@ class ZoomPan extends Component {
               {cities.map((marker, id) => (
                 <Marker
                   key={id}
-                  marker={{ coordinates: [marker.lon, marker.lat] }}
+                  marker={{ coordinates: [marker.coordinates.lon, marker.coordinates.lat] }}
                   style={{
                     default: { stroke: `#505050` },
                   }}
@@ -107,23 +108,27 @@ class ZoomPan extends Component {
                 </Marker>
               ))}
             </Markers>
+            <Annotations>
+              {cities.map((marker, id) => (
+                <Annotation
+                  key={id}
+                  dx={ -90 }
+                  dy={ -30 }
+                  subject={ [ marker.coordinates.lon, marker.coordinates.lat ] }
+                  strokeWidth={ 1 }
+                  curve={0.5}
+                  stroke="#607D8B"
+                  >
+                  <text>{ marker.city }</text>
+                </Annotation>
+              ))}
+            </Annotations>
           </ZoomableGroup>
         </ComposableMap>
       </div>
     )
   }
 }
-
-//ZoomPan.propTypes = {
-//  center: PropTypes.arrayOf(PropTypes.number),
-//  zoom: PropTypes.number,
-//  cities: PropTypes.arrayOf(
-//    PropTypes.shape({
-//      coordinates: PropTypes.arrayOf(PropTypes.number),
-//      country: PropTypes.string,
-//    })
-//  ),
-//}
 
 ZoomPan.defaultProps = {
   center: [0, 20],
