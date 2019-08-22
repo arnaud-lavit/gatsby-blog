@@ -6,12 +6,11 @@
   flex-wrap: wrap;
   list-style-type: none;
   margin: 0;
-  padding: 1.5rem 4rem;
+  padding: 1.5rem 12rem;
 }
 
 .post {
-  margin: 2rem 0 6rem;
-  
+  margin: 2rem 0 6rem;  
 
   a {
     display: block;
@@ -44,7 +43,6 @@
   
   Img {
     border-radius: 8px;
-    transition: all ease-out 0.2s !important;
   }
 
 }
