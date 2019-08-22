@@ -90,10 +90,10 @@ class ZoomPan extends Component {
           {({zoom,x,y}) => (
             <ComposableMap
               projectionConfig={{
-                scale: 300,
+                scale: 180,
               }}
               width={800}
-              height={551}
+              height={510}
               style={{
                 width: `100%`,
                 height: `auto`,
@@ -109,7 +109,6 @@ class ZoomPan extends Component {
                           key={geography.properties.NAME}
                           geography={geography}
                           projection={projection}
-                          //onClick={() => this.handleMapClick(geography)}
                           style={{
                             default: {
                               fill: `#f0f0f0`,
@@ -174,7 +173,7 @@ class ZoomPan extends Component {
 }
 
 ZoomPan.defaultProps = {
-  cities: [],
+  cities: []
 }
 
 export default ZoomPan
