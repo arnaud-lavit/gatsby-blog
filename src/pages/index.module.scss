@@ -47,7 +47,13 @@
 
 }
 
-@media (max-width: 740px) {
+@media (max-width: 1000px) {
+  .posts {
+    padding: 1.5rem 6rem;
+  }
+}
+
+@media (max-width: 760px) {
   .posts {
     padding: 0.4rem;
   }

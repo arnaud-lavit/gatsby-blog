@@ -50,3 +50,25 @@
   align-self: flex-start;
   width: 80%;
 }
+
+@media (max-width: 950px) {
+  .cities {
+    width: 100%;
+    padding: 1rem;
+
+    ul {
+      text-align: center;
+      
+      li {
+        display: inline-block;
+
+        button {
+          font-size: 15px;
+        }
+      }
+    } 
+  }
+  .map {
+    width: 100%;
+  }
+}
