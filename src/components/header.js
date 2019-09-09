@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import Typed from 'react-typed'
 
 import headerStyles from './header.module.scss'
 
@@ -17,7 +18,11 @@ const Header = () => {
     <header className={headerStyles.header}>
       <h1>
         <Link className={headerStyles.title} to="/">
-          {data.site.siteMetadata.title}
+          <Typed 
+            strings={[data.site.siteMetadata.title]}
+            typeSpeed={40}
+            showCursor={false}
+          />
         </Link>
       </h1>
       <nav>

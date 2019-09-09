@@ -3,6 +3,8 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import Head from '../components/head'
 import Layout from '../components/layout'
+import Typed from 'react-typed'
+
 import indexStyles from './index.module.scss'
 
 const IndexPage = () => {
@@ -34,8 +36,20 @@ const IndexPage = () => {
           return (
             <li key={edge.node.slug} className={indexStyles.post}>
               <Link to={`/blog/${edge.node.slug}`}>
-                <h2>{edge.node.title}</h2>
-                <p className={indexStyles.date}>{edge.node.publishedDate}</p>
+                <h2><Typed 
+                  strings={[edge.node.title]}
+                  startDelay={600}
+                  typeSpeed={50}
+                  showCursor={false}
+                />
+                </h2>
+                <Typed
+                  className={indexStyles.date}
+                  strings={[edge.node.publishedDate]}
+                  startDelay={600}
+                  typeSpeed={50}
+                  showCursor={false}
+                />
                 <Img fluid={edge.node.picture.fluid}/>
                 <p className={indexStyles.subtitle}>{edge.node.subtitle}</p>
               </Link>
