@@ -49,7 +49,7 @@ const IndexPage = () => {
                   showCursor={false}
                 />
                 <div className={indexStyles.imgContainer}>
-                  <Img fluid={edge.node.picture.fluid}/>
+                  <Img className={indexStyles.img} fluid={edge.node.picture.fluid}/>
                   <p className={indexStyles.subtitle}>{edge.node.subtitle}</p>
                 </div>
               </Link>
