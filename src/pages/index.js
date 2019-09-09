@@ -48,8 +48,10 @@ const IndexPage = () => {
                   typeSpeed={50}
                   showCursor={false}
                 />
-                <Img fluid={edge.node.picture.fluid}/>
-                <p className={indexStyles.subtitle}>{edge.node.subtitle}</p>
+                <div className={indexStyles.imgContainer}>
+                  <Img fluid={edge.node.picture.fluid}/>
+                  <p className={indexStyles.subtitle}>{edge.node.subtitle}</p>
+                </div>
               </Link>
             </li>
           )
