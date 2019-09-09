@@ -38,7 +38,6 @@ const IndexPage = () => {
               <Link to={`/blog/${edge.node.slug}`}>
                 <h2><Typed 
                   strings={[edge.node.title]}
-                  startDelay={600}
                   typeSpeed={50}
                   showCursor={false}
                 />
@@ -46,7 +45,6 @@ const IndexPage = () => {
                 <Typed
                   className={indexStyles.date}
                   strings={[edge.node.publishedDate]}
-                  startDelay={600}
                   typeSpeed={50}
                   showCursor={false}
                 />
