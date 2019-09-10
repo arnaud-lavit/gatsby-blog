@@ -12,6 +12,7 @@ const DestinationsPage = () => {
         edges {
           node {
             slug
+            title
             location {
               lon
               lat
@@ -25,7 +26,8 @@ const DestinationsPage = () => {
   const coords = data.allContentfulBlogPost.edges.map(edge => {
     return {
       coordinates: edge.node.location,
-      city: edge.node.slug
+      city: edge.node.title,
+      link: edge.node.slug
     }
   })
   return (

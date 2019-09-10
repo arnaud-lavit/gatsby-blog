@@ -53,7 +53,7 @@ class ZoomPan extends Component {
   render() {
     const { cities } = this.props
     const { center, zoom, annotation, city } = this.state
-
+    console.log(city)
     return (
       <div className={mapStyles.container}>
         <div className={mapStyles.cities}>
@@ -103,10 +103,10 @@ class ZoomPan extends Component {
               <Geographies geography={worldJson}>
                 {(geographies, projection) =>
                   geographies.map(
-                    geography =>
+                    (geography, id) =>
                       geography.id !== `ATA` && (
                         <Geography
-                          key={geography.properties.NAME}
+                          key={id}
                           geography={geography}
                           projection={projection}
                           style={{
@@ -157,11 +157,10 @@ class ZoomPan extends Component {
                       curve={0.5}
                       stroke="#607D8B"
                       >
-                      <Link to={`/blog/${city.city}`}><text>{ city.city }</text></Link>
+                      <Link to={`/blog/${city.link}`}><text>{ city.city }</text></Link>
                     </Annotation>
                   ): null
-                  }
-                  
+                  }        
               </ZoomableGroup>
             </ComposableMap>
           )}
