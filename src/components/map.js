@@ -10,6 +10,7 @@ import {
   Annotation
 } from "react-simple-maps"
 import { Motion, spring } from "react-motion"
+import Tippy from '@tippy.js/react'
 
 import mapStyles from './map.module.scss'
 import worldJson from "../../static/world-110m.json"
@@ -157,7 +158,16 @@ class ZoomPan extends Component {
                       curve={0.5}
                       stroke="#607D8B"
                       >
-                      <Link to={`/blog/${city.link}`}><text>{ city.city }</text></Link>
+                      <Link to={`/blog/${city.link}`}>
+                        <Tippy 
+                          content="Clique ici !"
+                          arrow={true}
+                          animateFill={false}
+                          animation="scale"
+                        >
+                          <text>{ city.city }</text>
+                        </Tippy>
+                      </Link>
                     </Annotation>
                   ): null
                   }        
