@@ -12,7 +12,7 @@ import {
 import { Motion, spring } from "react-motion"
 
 import mapStyles from './map.module.scss'
-import worldJson from "../../static/world-50m-simplified.json"
+import worldJson from "../../static/world-110m.json"
 
 
 class ZoomPan extends Component {
@@ -111,17 +111,17 @@ class ZoomPan extends Component {
                           projection={projection}
                           style={{
                             default: {
-                              fill: `#f0f0f0`,
-                              stroke: `#cdcdcd`,
-                              strokeWidth: 0.75,
-                              outline: `none`,
+                              fill: `rgb(220, 223, 225)`,
+                              outline: `none`
                             },
                             hover: {
-                              fill: `#828282`,
-                              stroke: `#cdcdcd`,
-                              strokeWidth: 0.75,
-                              outline: `none`,
+                              fill: `rgb(96, 125, 139)`,
+                              outline: `none`
                             },
+                            pressed: {
+                              fill: `rgb(257, 85, 34)`,
+                              outline: `none`
+                            }
                           }}
                         />
                       )

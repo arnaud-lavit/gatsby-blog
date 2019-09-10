@@ -43,8 +43,7 @@ const Blog = props => {
         <Typed
             className={blogStyles.date}
             strings={[props.data.contentfulBlogPost.publishedDate]}
-            startDelay={1000}
-            typeSpeed={70}
+            typeSpeed={50}
             showCursor={false}
           />
         {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
