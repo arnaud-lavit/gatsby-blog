@@ -21,6 +21,54 @@ img {
   border-radius: 8px;
 }
 
+.prev {
+  position: relative;
+  float: left;
+  display: block;
+  margin: 30px auto;
+  padding: 9px 18px;
+  text-decoration: none;
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  
+  background-color: #2ecc71;
+  color: #ecf0f1;
+  
+  transition: background-color .3s;
+}
+
+.next {
+  position: relative;
+  float: right;
+  display: block;
+  margin: 30px auto;
+  padding: 9px 18px;
+  text-decoration: none;
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  
+  background-color: #2ecc71;
+  color: #ecf0f1;
+  
+  transition: background-color .3s;
+}
+
+.prev:hover, .prev:focus {
+  background-color: #27ae60;
+}
+
+.next:hover, .next:focus {
+  background-color: #27ae60;
+}
+
 @media (max-width: 1000px) {
   .container {
     padding-right: 3rem;

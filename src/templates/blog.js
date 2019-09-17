@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Head from '../components/head'
 import Layout from '../components/layout'
@@ -29,6 +29,7 @@ const Blog = props => {
       }
     }
   }
+  console.log(props.pathContext)
   return (
     <Layout>
       <Head title={props.data.contentfulBlogPost.title} />
@@ -47,6 +48,12 @@ const Blog = props => {
             showCursor={false}
           />
         {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
+        {props.pathContext.prev &&
+          <Link className={blogStyles.prev} to={props.pathContext.prev}>Précédent</Link>
+        }
+        {props.pathContext.next &&
+          <Link className={blogStyles.next} to={props.pathContext.next}>Suivant</Link>
+        }
       </div>   
     </Layout>
   )

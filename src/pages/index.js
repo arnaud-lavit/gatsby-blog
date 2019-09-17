@@ -36,11 +36,12 @@ const IndexPage = () => {
           return (
             <li key={edge.node.slug} className={indexStyles.post}>
               <Link to={`/blog/${edge.node.slug}`}>
-                <h2><Typed 
+                <h2>
+                  <Typed 
                   strings={[edge.node.title]}
                   typeSpeed={50}
                   showCursor={false}
-                />
+                  />
                 </h2>
                 <Typed
                   className={indexStyles.date}
