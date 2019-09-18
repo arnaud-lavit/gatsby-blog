@@ -54,7 +54,7 @@ class ZoomPan extends Component {
   render() {
     const { cities } = this.props
     const { center, zoom, annotation, city } = this.state
-    console.log(city)
+
     return (
       <div className={mapStyles.container}>
         <div className={mapStyles.cities}>

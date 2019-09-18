@@ -30,12 +30,13 @@ const Blog = props => {
       },
       [INLINES.HYPERLINK]: node => {
         if((node.data.uri).includes("youtube.com/embed")) {
-          return <span className={blogStyles.ytb}><iframe src={node.data.uri}></iframe></span>
+          const iframeTitle = node.data.uri.split('/').pop()
+          return <span className={blogStyles.ytb}><iframe title={iframeTitle} src={node.data.uri}></iframe></span>
         }
       }
     }
   }
-  console.log(props.pathContext)
+  
   return (
     <Layout>
       <Head title={props.data.contentfulBlogPost.title} />
@@ -54,11 +55,11 @@ const Blog = props => {
             showCursor={false}
           />
         {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
-        {props.pathContext.prev &&
-          <Link className={blogStyles.prev} to={props.pathContext.prev}>Précédent</Link>
+        {props.pageContext.prev &&
+          <Link className={blogStyles.prev} to={props.pageContext.prev}>Précédent</Link>
         }
-        {props.pathContext.next &&
-          <Link className={blogStyles.next} to={props.pathContext.next}>Suivant</Link>
+        {props.pageContext.next &&
+          <Link className={blogStyles.next} to={props.pageContext.next}>Suivant</Link>
         }
       </div>   
     </Layout>
