@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import Typed from 'react-typed'
 
 import blogStyles from './blog.module.scss'
+import { INLINES } from '@contentful/rich-text-types'
 
 export const query = graphql`
   query($slug: String!) {
@@ -26,6 +27,11 @@ const Blog = props => {
         const alt = node.data.target.fields.title['en-US']
         const url = node.data.target.fields.file['en-US'].url
         return <img alt={alt} src={url} />
+      },
+      [INLINES.HYPERLINK]: node => {
+        if((node.data.uri).includes("youtube.com/embed")) {
+          return <span><iframe src={node.data.uri} width="600" height="400"></iframe></span>
+        }
       }
     }
   }
