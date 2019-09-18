@@ -30,7 +30,7 @@ const Blog = props => {
       },
       [INLINES.HYPERLINK]: node => {
         if((node.data.uri).includes("youtube.com/embed")) {
-          return <span><iframe src={node.data.uri} width="600" height="400"></iframe></span>
+          return <span className={blogStyles.ytb}><iframe src={node.data.uri}></iframe></span>
         }
       }
     }
